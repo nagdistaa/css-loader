@@ -1,5 +1,7 @@
 # Loading Spinner Animation
 
+## [ Preview Link ] (https://nagdista-loader.netlify.app/)
+
 This project creates an elegant loading animation with rotating dots that appear and disappear in sequence, creating a circular loading effect.
 
 ## Overview
@@ -12,12 +14,12 @@ The HTML structure is simple and consists of:
 
 ```html
 <section>
-    <div class="loader">
-        <p>loading</p>
-        <span style="--i:1"></span>
-        <span style="--i:2"></span>
-        <!-- ... spans continue through --i:20 -->
-    </div>
+  <div class="loader">
+    <p>loading</p>
+    <span style="--i:1"></span>
+    <span style="--i:2"></span>
+    <!-- ... spans continue through --i:20 -->
+  </div>
 </section>
 ```
 
@@ -33,17 +35,17 @@ The HTML structure is simple and consists of:
 
 ```css
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #001f25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #001f25;
 }
 ```
 
@@ -53,18 +55,18 @@ This creates a full-viewport dark teal background and centers the animation.
 
 ```css
 .loader {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loader p {
-    color: #00efff;
-    font-size: 1.8em;
-    text-shadow: 0 0 20px #00efff, 0 0 40px #00efff;
+  color: #00efff;
+  font-size: 1.8em;
+  text-shadow: 0 0 20px #00efff, 0 0 40px #00efff;
 }
 ```
 
@@ -76,26 +78,27 @@ This creates a full-viewport dark teal background and centers the animation.
 
 ```css
 .loader span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: rotate(calc(18deg * var(--i)));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(18deg * var(--i)));
 }
 
 .loader span::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #00efff;
-    box-shadow: 0 0 20px #00efff, 0 0 40px #00efff, 0 0 80px #00efff, 0 0 160px #00efff;
-    animation: animate 1s linear infinite;
-    animation-delay: calc(-0.1s * var(--i));
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #00efff;
+  box-shadow: 0 0 20px #00efff, 0 0 40px #00efff, 0 0 80px #00efff, 0 0 160px
+      #00efff;
+  animation: animate 1s linear infinite;
+  animation-delay: calc(-0.1s * var(--i));
 }
 ```
 
@@ -109,12 +112,13 @@ This creates a full-viewport dark teal background and centers the animation.
 
 ```css
 @keyframes animate {
-    0% {
-        transform: scale(1);
-    }
-    80%, 100% {
-        transform: scale(0);
-    }
+  0% {
+    transform: scale(1);
+  }
+  80%,
+  100% {
+    transform: scale(0);
+  }
 }
 ```
 
